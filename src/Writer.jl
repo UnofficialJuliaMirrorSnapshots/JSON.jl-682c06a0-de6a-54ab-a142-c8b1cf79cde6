@@ -351,6 +351,17 @@ print(io::IO, obj) = show_json(io, StandardSerialization(), obj)
 print(a, indent) = print(stdout, a, indent)
 print(a) = print(stdout, a)
 
+"""
+    json(a)
+    json(a, indent::Int)
+
+Creates a JSON string from a Julia object or value.
+
+Arguments:
+  • a: the Julia object or value to encode
+  • indent (optional number): if provided, pretty-print array and object
+    substructures by indenting with the provided number of spaces
+"""
 json(a) = sprint(print, a)
 json(a, indent) = sprint(print, a, indent)
 
